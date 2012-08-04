@@ -24,7 +24,13 @@ class IpComments extends \Modules\standard\content_management\Widget
     public function previewHtml($instanceId, $data, $layout)
     {
         $model = new \Modules\community\comments\Model();
+        $service = new \Modules\community\comments\Service();
         $data['form'] = $model->createForm();
+        $comments = $service->getComments();
+        foreach ($comments as &$comment) {
+            $comment['text'] = str_replace("\n", "<br/>", $comment['text']);
+        }
+        $data['comments'] = $comments;
 
         return parent::previewHtml($instanceId, $data, $layout);
     }

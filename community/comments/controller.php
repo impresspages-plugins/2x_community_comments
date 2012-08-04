@@ -90,17 +90,9 @@ class Controller extends \Ip\Controller
                 $dispatcher->notify(new \Ip\Event($site, 'comments.approved', array('id' => $commentId)));
             }
 
-            $commentUrl = $site->getCurrentUrl();
-            if (strpos($commentUrl, '?') === false) {
-                $commentUrl .= '?';
-            } else {
-                $commentUrl .= '&';
-            }
-            $commentUrl .= '#ipComment-'.$commentId;
-
             $data = array(
                 'status' => 'success',
-                'redirectUrl' => $commentUrl
+                'commentId' => $commentId
             );
         }
 

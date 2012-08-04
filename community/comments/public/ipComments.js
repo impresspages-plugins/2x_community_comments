@@ -1,3 +1,6 @@
+
+"use strict";
+
 (function($) {
     $.fn.ipWidgetIpCommentsForm = function() {
         return this.each(function() {
@@ -16,6 +19,26 @@
                             if (!response) {
                                 return;
                             }
+
+                            if (response.commentId) {
+                                var newLocation = document.location.href;
+                                if (newLocation.indexOf('ipModuleComments=') > 0) {
+                                    newLocation = newLocation.substring(0, newLocation.indexOf('ipModuleComments='));
+                                }
+                                if (newLocation.indexOf('#') > 0) {
+                                    newLocation = newLocation.substring(0, newLocation.indexOf('#'));
+                                }
+
+                                if (newLocation.indexOf('?') < 0) {
+                                    newLocation = newLocation + '?';
+                                } else {
+                                    newLocation = newLocation + '&';
+                                }
+                                newLocation = newLocation + 'ipModuleComments=' + response.commentId + '#ipModuleComments-' + response.commentId;
+                                document.location = newLocation;
+                            }
+
+
                             if (response.status && response.status == 'success') {
                                 if (response.redirectUrl) {
                                     document.location = response.redirectUrl;
@@ -41,5 +64,5 @@
 
 $(document).ready(function() {
     $('.ipWidget-IpComments').ipWidgetIpCommentsForm();
-    console.log($('.ipWidget-IpComments'));
+
 });
