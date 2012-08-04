@@ -1,12 +1,14 @@
 <?php
 /**
  * @package   ImpressPages
- * @copyright Copyright (C) 2009 JSC Apro media.
- * @license   GNU/GPL, see license.html
+ * @copyright Copyright (C) 2012 JSC Apro Media.
+ * @license   GNU/GPL, see ip_license.html
  */
+
 namespace Modules\community\comments;
 
-if (!defined('BACKEND')) exit;
+
+
 
 require_once(BASE_DIR.MODULE_DIR.'developer/std_mod/std_mod.php');
 require_once(BASE_DIR.PLUGIN_DIR.'community/comments/element_page.php');
@@ -93,7 +95,12 @@ class CommentsArea extends \Modules\developer\std_mod\Area{
     
     
     $element = new ElementPage(
-    array(
+    arra<?php
+/**
+ * @package   ImpressPages
+ * @copyright Copyright (C) 2012 JSC Apro media.
+ * @license   GNU/GPL, see ip_license.html
+ */y(
     'title' => $parametersMod->getValue('community', 'comments', 'admin_translations', 'page'),
     'dbField' => 'id',
     'showOnList' => true,
