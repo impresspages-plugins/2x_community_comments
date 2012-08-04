@@ -22,6 +22,7 @@ class CommentsArea extends \Modules\developer\std_mod\Area{
       'dbPrimaryKey' => 'id',
       'searchable' => true,
       'orderBy' => 'id',
+      'orderDirection' => 'desc',
       'sortable' => false,
       'allowInsert' => false
       )    

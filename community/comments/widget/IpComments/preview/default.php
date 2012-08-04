@@ -8,7 +8,7 @@
 
 <?php if(!empty($comments)) { ?>
     <?php echo $this->renderWidget('IpTitle', array('title' => $this->par('community/comments/translations/comments')), 'level3'); ?>
-    <ol class="ipmComments">
+    <ul class="ipmComments">
         <?php foreach($comments as $key => $comment){ ?>
             <li class="ipmComment-<?php echo isset($comment['id']) ? $comment['id'] : '' ?> <?php echo $comment['approved'] ? '' : 'ipmNotApproved' ?> <?php echo $key%2 == 0 ? 'ipmEven' : '' ?>">
                 <cite><a name="ipModuleComments-<?php echo isset($comment['id']) ? $comment['id'] : '' ?>" href="#ipModuleComments-<?php echo isset($comment['id']) ? $comment['id'] : '' ?>"></a>
@@ -33,5 +33,5 @@
                 </p>
             </li>
         <?php } ?>
-    </ol>
+    </ul>
 <?php } ?>

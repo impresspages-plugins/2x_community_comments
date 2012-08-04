@@ -14,6 +14,8 @@ class System{
         global $dispatcher;
         global $site;
 
+        $site->addCSS(BASE_URL.PLUGIN_DIR.'community/comments/public/comments.css');
+
         $site->addJavascript(BASE_URL.LIBRARY_DIR.'js/jquery/jquery.js');
         $site->addJavascript(BASE_URL.LIBRARY_DIR.'js/jquery-tools/jquery.tools.form.js');
         $site->addJavascript(BASE_URL.MODULE_DIR.'standard/content_management/public/widgets.js');

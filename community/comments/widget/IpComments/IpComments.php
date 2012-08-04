@@ -28,7 +28,7 @@ class IpComments extends \Modules\standard\content_management\Widget
         $data['form'] = $model->createForm();
         $comments = $service->getComments();
         foreach ($comments as &$comment) {
-            $comment['text'] = str_replace("\n", "<br/>", $comment['text']);
+            $comment['text'] = str_replace("\n", "<br/>", htmlspecialchars($comment['text']));
         }
         $data['comments'] = $comments;
 
