@@ -90,6 +90,7 @@ class Model
                 'required' => true
             );
             $field = new \Modules\developer\form\Field\Captcha($options);
+            $field->addValidator("Required");
             $form->addField($field);
         }
 
