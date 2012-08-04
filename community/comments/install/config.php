@@ -114,6 +114,11 @@ $moduleTitle["community"]["comments"] = "Comments";
     $parameterAdmin["community"]["comments"]["options"]["require_admin_confirmation"] = "0";
     $parameterType["community"]["comments"]["options"]["require_admin_confirmation"] = "bool";
 
+    $parameterTitle["community"]["comments"]["options"]["require_login"] = "Require login to comment";
+    $parameterValue["community"]["comments"]["options"]["require_login"] = "0";
+    $parameterAdmin["community"]["comments"]["options"]["require_login"] = "0";
+    $parameterType["community"]["comments"]["options"]["require_login"] = "bool";
+
     $parameterTitle["community"]["comments"]["options"]["inform_about_new_comments"] = "Inform about new comments";
     $parameterValue["community"]["comments"]["options"]["inform_about_new_comments"] = "1";
     $parameterAdmin["community"]["comments"]["options"]["inform_about_new_comments"] = "0";

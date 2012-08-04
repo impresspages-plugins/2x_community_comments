@@ -45,7 +45,7 @@ class Model
         if (isset($_SESSION['modules']['community']['comments']['last_name'])) {
             $options['defaultValue'] = $_SESSION['modules']['community']['comments']['last_name'];
         }
-        if ($session->loggedIn() && $userData['name'] != '') {
+        if ($session->loggedIn() && !empty($userData['name']) != '') {
             $options['defaultValue'] = $userData['name'];
         }
         $field = new \Modules\developer\form\Field\Text($options);

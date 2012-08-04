@@ -23,6 +23,13 @@ class IpComments extends \Modules\standard\content_management\Widget
 
     public function previewHtml($instanceId, $data, $layout)
     {
+        global $parametersMod;
+        global $session;
+
+        if ($parametersMod->getValue('community', 'comments', 'options', 'require_login') && !$session->loggedIn()) {
+            return \Ip\View::create('view/login.php')->render();
+        }
+
         $model = new \Modules\community\comments\Model();
         $service = new \Modules\community\comments\Service();
         $data['form'] = $model->createForm();

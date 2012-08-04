@@ -71,6 +71,8 @@ $moduleTitle["community"]["comments"] = "Comments";
 
     $parameterTitle["community"]["comments"]["options"]["require_admin_confirmation"] = "Require admin confirmation";
 
+    $parameterTitle["community"]["comments"]["options"]["require_login"] = "Require login to comment";
+
     $parameterTitle["community"]["comments"]["options"]["inform_about_new_comments"] = "Inform about new comments";
 
     $parameterTitle["community"]["comments"]["options"]["use_captcha"] = "Use captcha";
