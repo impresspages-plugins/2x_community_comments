@@ -2,9 +2,9 @@
 
 <?php echo (isset($form) ? $form->render() : '') ?>
 
-<?php echo $this->renderWidget('IpTitle', array('title' => $this->par('community/comments/translations/comments')), 'level3'); ?>
 
 <?php if(!empty($comments)) { ?>
+    <?php echo $this->renderWidget('IpTitle', array('title' => $this->par('community/comments/translations/comments')), 'level3'); ?>
     <ol class="ipModuleCommunityComments">
         <?php foreach($comments as $key => $comment){ ?>
             <li id="ipComment-'.$comment['id'].'" class="<?php echo $comment['approved'] ? '' : 'notApproved' ?> <?php echo $key%2 == 0 ? 'ipModuleCommunityCommentsEven' : '' ?>">

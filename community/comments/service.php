@@ -16,12 +16,17 @@ namespace Modules\community\comments;
 class Service
 {
 
+    public function getCommentById($id)
+    {
+        return Db::getComment($id);
+    }
+
     public function getComments($languageId = null, $zoneName = null, $pageId = null)
     {
         global $site;
 
         if($languageId === null){
-            $languageId = $site->currentLanguage['id'];
+            $languageId = $site->getCurrentLanguage()->getId();
         }
 
         if($zoneName === null){
@@ -45,67 +50,6 @@ class Service
         return $comments;
     }
 
-
-    public function generateForm($languageId = null, $zoneName = null, $pageId = null)
-    {
-        global $site;
-
-        $site->requireConfig('community/comments/config.php');
-        $site->requireTemplate('community/comments/template.php');
-        require_once(BASE_DIR.LIBRARY_DIR.'php/form/standard.php');
-
-        $answer = '';
-
-        if($languageId === null){
-            $languageId = $site->currentLanguage['id'];
-        }
-
-        if($zoneName === null){
-            $zoneName = $site->getCurrentZoneName();
-        }
-
-        if($pageId === null){
-            $pageId = $site->getCurrentElement()->getId();
-        }
-
-
-        $fields = Config::getFields();
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'module_group';
-        $field->value = 'community';
-        $fields[] = $field;
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'module_name';
-        $field->value = 'comments';
-        $fields[] = $field;
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'action';
-        $field->value = 'comment';
-        $fields[] = $field;
-
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'language_id';
-        $field->value = $site->currentLanguage['id'];
-        $fields[] = $field;
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'zone_name';
-        $field->value = $site->getCurrentZoneName();
-        $fields[] = $field;
-
-        $field =  new \Library\Php\Form\FieldHidden();
-        $field->name = 'page_id';
-        $field->value = $site->getCurrentElement()->getId();
-        $fields[] = $field;
-
-        $answer = Template::generateForm($fields);
-
-        return $answer;
-    }
 
 
 }

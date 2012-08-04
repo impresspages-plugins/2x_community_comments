@@ -8,8 +8,6 @@
 namespace Modules\community\comments;
 
 
-
-
 require_once(BASE_DIR.MODULE_DIR.'developer/std_mod/std_mod.php');
 require_once(BASE_DIR.PLUGIN_DIR.'community/comments/element_page.php');
 
@@ -95,12 +93,7 @@ class CommentsArea extends \Modules\developer\std_mod\Area{
     
     
     $element = new ElementPage(
-    arra<?php
-/**
- * @package   ImpressPages
- * @copyright Copyright (C) 2012 JSC Apro media.
- * @license   GNU/GPL, see ip_license.html
- */y(
+    array(
     'title' => $parametersMod->getValue('community', 'comments', 'admin_translations', 'page'),
     'dbField' => 'id',
     'showOnList' => true,
@@ -150,11 +143,11 @@ class CommentsArea extends \Modules\developer\std_mod\Area{
     require_once(__DIR__.'/db.php');
     $comment = Db::getComment($recordId);    
     if(!$this->beforeUpdateApproved && $comment['approved']){
-      $site->dispatchEvent('community', 'comments', 'comment_approwed', array('id'=>$recordId));      
+      $site->dispatchEvent('community', 'comments', 'comment_approved', array('id'=>$recordId));
     }
     
     if($this->beforeUpdateApproved && !$comment['approved']){
-      $site->dispatchEvent('community', 'comments', 'comment_disapprowed', array('id'=>$recordId));      
+      $site->dispatchEvent('community', 'comments', 'comment_disapproved', array('id'=>$recordId));
     }
     
   }
