@@ -191,3 +191,8 @@ $moduleTitle["community"]["comments"] = "Comments";
     $parameterValue["community"]["comments"]["translations"]["error_comments_limit"] = "Too many comments. Please wait a few minutes.";
     $parameterAdmin["community"]["comments"]["translations"]["error_comments_limit"] = "0";
     $parameterType["community"]["comments"]["translations"]["error_comments_limit"] = "lang";
+
+    $parameterTitle["community"]["comments"]["translations"]["error_must_login"] = "Must login to comment";
+    $parameterValue["community"]["comments"]["translations"]["error_must_login"] = "Please login to comment.";
+    $parameterAdmin["community"]["comments"]["translations"]["error_must_login"] = "0";
+    $parameterType["community"]["comments"]["translations"]["error_must_login"] = "lang";

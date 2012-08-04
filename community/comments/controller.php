@@ -32,6 +32,10 @@ class Controller extends \Ip\Controller
             $errors['globalError'] = $parametersMod->getValue('community', 'comments', 'translations', 'error_comments_limit');
         }
 
+        if ($parametersMod->getValue('community', 'comments', 'options', 'require_login') && !$session->loggedIn()) {
+            $errors['globalError'] = $parametersMod->getValue('community', 'comments', 'translations', 'error_must_login');
+        }
+
         if ($errors) {
             //return error
             $data = array(

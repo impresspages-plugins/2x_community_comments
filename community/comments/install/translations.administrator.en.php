@@ -102,3 +102,5 @@ $moduleTitle["community"]["comments"] = "Comments";
     $parameterTitle["community"]["comments"]["translations"]["captcha"] = "Captcha";
 
     $parameterTitle["community"]["comments"]["translations"]["error_comments_limit"] = "Error comments limit reached";
+
+    $parameterTitle["community"]["comments"]["translations"]["error_must_login"] = "Must login to comment";
