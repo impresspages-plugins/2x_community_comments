@@ -14,10 +14,10 @@
                 <cite><a name="ipModuleComments-<?php echo isset($comment['id']) ? $comment['id'] : '' ?>" href="#ipModuleComments-<?php echo isset($comment['id']) ? $comment['id'] : '' ?>"></a>
                     <?php if($comment['link']){ ?>
                         <a rel="external nofollow" href="<?php echo $this->esc($comment['link']) ?>">
-                            <?echo $this->esc($comment['name']) ?>
+                            <?php echo $this->esc($comment['name']) ?>
                         </a>
                     <?php } else { ?>
-                        <?echo $this->esc($comment['name']) ?>
+                        <?php echo $this->esc($comment['name']) ?>
                     <?php } ?>
                 </cite>
                 <?php $this->escPar('community/comments/translations/says') ?>
